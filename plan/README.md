@@ -13,11 +13,20 @@ This directory turns the broad research investigations in the [vault](../vault/R
 - Update the [status board](status.md) when a card changes state.
 - There is no time or token budget. Continue until acceptance, a scientific failure result, or a concrete blocker.
 
+## Bounded-agent handoff for D000
+
+- Assign only one D000 subcard to a model session.
+- Supply that card, the execution protocol, its linked policy, and its direct dependency artifacts; do not preload unrelated vault material.
+- Keep each session in an isolated branch or worktree and forbid cross-card edits.
+- Require the execution log before implementation and a final packet containing state, commit, checks, artifacts, and blockers.
+- Treat no-tool model output as review material only; an implementing agent must integrate and machine-check it before it changes card state.
+- After D000I exists, replay every earlier foundation manifest through `pixi run verify-card -- ID` before D000 integration.
+
 ## Execution phases
 
 | Phase | Purpose | Deliverables | Exit condition |
 |---|---|---|---|
-| Foundation | Make every output machine-verifiable | D000, D007–D009 | Verification gate active |
+| Foundation | Make every output machine-verifiable | D000A–D000J, D000, D007–D009 | Verification gate active |
 | 0. Specification | Make the method reproducible | D001–D006 | H0 and H1 decided |
 | 1. Prior art and equivalence | Bound what is already known | D010–D015 | Comparator set and novelty boundary fixed |
 | 2. Theory | Derive only the claims the method needs | D020–D025 | Scale, stability, uncertainty, MRA, and RG claims bounded |
@@ -29,7 +38,17 @@ This directory turns the broad research investigations in the [vault](../vault/R
 
 ### Foundation — Machine verification
 
-- [D000 — Establish the verification architecture](deliverables/D000-verification-architecture.md)
+- [D000A — Define the verification repository layout](deliverables/D000A-repository-layout.md)
+- [D000B — Establish the Pixi and Python foundation](deliverables/D000B-pixi-python-foundation.md)
+- [D000C — Define the verification-manifest schema](deliverables/D000C-manifest-schema.md)
+- [D000D — Implement manifest validation](deliverables/D000D-manifest-validator.md)
+- [D000E — Validate artifacts, hashes, and commands](deliverables/D000E-artifact-command-validation.md)
+- [D000F — Establish the Julia verification foundation](deliverables/D000F-julia-foundation.md)
+- [D000G — Establish the Lean verification foundation](deliverables/D000G-lean-foundation.md)
+- [D000H — Enforce the conditional Rust policy](deliverables/D000H-rust-conditional-guard.md)
+- [D000I — Implement canonical verification dispatch](deliverables/D000I-verification-dispatch.md)
+- [D000J — Prove CI and clean-checkout verification](deliverables/D000J-ci-clean-checkout.md)
+- [D000 — Integrate the verification architecture](deliverables/D000-verification-architecture.md)
 - [D007 — Encode machine-readable specification contracts](deliverables/D007-machine-readable-specification.md)
 - [D008 — Establish the formal proof foundation](deliverables/D008-formal-proof-foundation.md)
 - [D009 — Enforce continuous verification](deliverables/D009-continuous-verification.md)

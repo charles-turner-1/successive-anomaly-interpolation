@@ -113,7 +113,7 @@ Useful entry points:
 
 The project is at verification-foundation and specification lock. It does not yet claim a new algorithm.
 
-The first deliverable is [D000 — Establish the verification architecture](plan/deliverables/D000-verification-architecture.md). It creates the Pixi environment, schemas, language-specific project environments, Lean foundation, continuous verification, and the canonical `pixi run verify` interface. The mathematical vocabulary and estimator are then frozen through D001–D006 before confirmatory implementation begins.
+The first foundation milestone is [D000 — Integrate the verification architecture](plan/deliverables/D000-verification-architecture.md). Ten bounded cards, [D000A–D000J](plan/README.md#foundation--machine-verification), separately establish the repository layout, Pixi/Python environment, manifest contract, validators, language toolchains, dispatch, and CI before D000 proves the integrated `pixi run verify` interface. The mathematical vocabulary and estimator are then frozen through D001–D006 before confirmatory implementation begins.
 
 ## Contributions and critique
 
