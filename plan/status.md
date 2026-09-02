@@ -4,7 +4,7 @@ Allowed states: `blocked`, `ready`, `in progress`, `review`, `done`, `failed`, `
 
 | ID | State | Depends on | Primary artifact |
 |---|---|---|---|
-| D000A | ready | — | Verification layout |
+| D000A | review | — | [Verification layout](../docs/verification-layout.md) ([log](../logs/D000A-execution.log.md)) |
 | D000B | blocked | D000A | Pixi/Python foundation |
 | D000C | blocked | D000A, D000B | Verification-manifest schema |
 | D000D | blocked | D000B, D000C | Manifest validator |
