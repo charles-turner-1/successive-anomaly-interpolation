@@ -1,0 +1,30 @@
+id: D000A
+verification_class:
+  - V2
+  - V4
+inputs:
+  - plan/deliverables/D000A-repository-layout.md@2499d43
+  - plan/execution-protocol.md@2499d43
+  - plan/toolchain-policy.md@2499d43
+  - plan/verification-policy.md@2499d43
+artifacts:
+  - docs/verification-layout.md
+  - verification/check_layout.py
+  - verification/fixtures/missing-paths/expected.txt
+  - logs/D000A-execution.log.md
+commands:
+  - python3 verification/check_layout.py --root .
+  - python3 verification/check_layout.py --root verification/fixtures/missing-paths
+  - python3 -m py_compile verification/check_layout.py
+expected:
+  - valid repository tree exits 0 with stable output
+  - missing-path fixture exits 1, names reports, and matches expected.txt
+  - checker compiles using only the Python standard library
+hypotheses:
+  - H0-H12-infrastructure
+toolchain:
+  python: system bootstrap interpreter; pinning deferred to D000B
+result: review
+notes:
+  - Direct bootstrap checks pass.
+  - Promote to done only after D000C validates this record and D000I replays it through pixi run verify-card -- D000A.
