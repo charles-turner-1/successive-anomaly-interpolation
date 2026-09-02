@@ -4,7 +4,17 @@ Allowed states: `blocked`, `ready`, `in progress`, `review`, `done`, `failed`, `
 
 | ID | State | Depends on | Primary artifact |
 |---|---|---|---|
-| D000 | ready | — | Verification architecture |
+| D000A | ready | — | Verification layout |
+| D000B | blocked | D000A | Pixi/Python foundation |
+| D000C | blocked | D000A, D000B | Verification-manifest schema |
+| D000D | blocked | D000B, D000C | Manifest validator |
+| D000E | blocked | D000B, D000C | Artifact/hash/command validators |
+| D000F | blocked | D000A, D000B | Julia foundation |
+| D000G | blocked | D000A, D000B | Lean foundation |
+| D000H | blocked | D000A, D000B | Conditional Rust guard |
+| D000I | blocked | D000B, D000D–D000H | Verification dispatcher |
+| D000J | blocked | D000C, D000I | CI and clean-checkout proof |
+| D000 | blocked | D000A–D000J | Integrated verification architecture |
 | D001 | ready | D000 for completion | Frozen glossary |
 | D002 | blocked | D001 | Data/observation specification |
 | D003 | blocked | D001, D002 | Typed stage operator |
